@@ -1,7 +1,7 @@
 # twebengine-sample
 Exemplo relativo ao TWebEngine e TWebChannel
 
-Baixe o fonte nivercomp.prw e o arquivo twebchannel.js ([disponivel aqui.](https://github.com/totvs/twebchannel-js))
+Baixe o fonte nivercomp.prw e o arquivo twebchannel.js ([disponivel aqui](https://github.com/totvs/twebchannel-js)).
 
 Compile ambos em seu ambiente Protheus para execução
 
