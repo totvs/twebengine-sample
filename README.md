@@ -15,7 +15,9 @@ Compile ambos em seu ambiente Protheus para execução
 
 Na função principal instanciamos os componentes TWebEngine (chromium embedded), TWebChannel (WebSocket) e NiverComp (WebComponent de teste).
 
-Neste mesmo trecho definimos o bloco de código bLoadFinish, responsavel por receber as mensagens vindas do JavaScript.
+Neste mesmo trecho definimos o bloco de código bJsToAdvpl, responsavel por receber as mensagens vindas do JavaScript.
+
+Quanto ao bloco de código bLoadFinish, ele será disparado logo após o término da carga da página HTML feita à partir do método Navigate do componente TWebEngine.
 
 ![](https://raw.githubusercontent.com/totvs/twebengine-sample/master/images/mainfunction.png)
 
