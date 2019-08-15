@@ -9,11 +9,13 @@ Compile ambos em seu ambiente **TOTVS Protheus** e execute a função u_NiverCom
 
 Será criado o arquivo **nivercomp.html** em seu diretório Temp e exibido através do TWebEngine.
 
-# Documentação sobre os componentes:
+# Documentação de apoio:
 
 [TWebEngine](http://tdn.totvs.com/display/tec/twebengine)
 
 [TWebChannel](http://tdn.totvs.com/display/tec/twebchannel)
+
+[BeginContent](http://tdn.totvs.com/display/teces/BEGINCONTENT...ENDCONTENT)
 
 ## Função principal
 
