@@ -51,8 +51,8 @@ return
 // Blocos de codigo recebidos via JavaScript
 static function jsToAdvpl(self,key,value)
 	conout("",;
-		   "jsToAdvpl->key: " + key,;
-           "jsToAdvpl->value: " + value)
+		"jsToAdvpl->key: " + key,;
+           	"jsToAdvpl->value: " + value)
 
     // ---------------------------------------------------------------
     // Insira aqui o tratamento para as mensagens vindas do JavaScript
