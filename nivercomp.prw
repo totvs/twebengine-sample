@@ -1,5 +1,16 @@
 #include "totvs.ch"
 
+/*{Protheus.doc} u_NiverComp
+    Funcao de teste para o TWebEngine/TWebChannel
+    @author Ricardo Mansano
+    @since 14/08/2019
+    @see: http://tdn.totvs.com/display/tec/twebengine
+          http://tdn.totvs.com/display/tec/twebchannel
+    @observation:
+          Compativel com SmartClient Desktop(Qt);
+                SmartClient HTML(WebApp);
+                SmartClient Electron;
+*/
 function u_NiverComp
     local oWebEngine
     private aNiversLocal := {}
