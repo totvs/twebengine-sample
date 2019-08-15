@@ -14,6 +14,7 @@ Será criado o arquivo **nivercomp.html** em seu diretório Temp e exibido atrav
 * [TWebEngine](http://tdn.totvs.com/display/tec/twebengine)
 * [TWebChannel](http://tdn.totvs.com/display/tec/twebchannel)
 * [BeginContent](http://tdn.totvs.com/display/teces/BEGINCONTENT...ENDCONTENT)
+* [twebchannel.js](https://github.com/totvs/twebchannel-js)
 
 ## Função principal
 
