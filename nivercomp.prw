@@ -37,7 +37,7 @@ function u_NiverComp
         oWebEngine:bLoadFinished := {|webengine, url| oNiverComp:OnInit(webengine, url),;
                                                       myLoadFinish(webengine, url) }
 
-    oDlg:Activate(/*"MAXIMIZED"*/)
+    oDlg:Activate("MAXIMIZED")
 return
 
 // Funcao customizada que sera disparada apos o termino da carga da pagina
