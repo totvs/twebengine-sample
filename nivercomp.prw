@@ -21,11 +21,11 @@ function u_NiverComp
         oWebChannel := TWebChannel():New()
         oWebChannel:bJsToAdvpl := {|self,key,value| jsToAdvpl(self,key,value) } 
         oWebChannel:connect()
-
+        
         // WebEngine (chromium embedded)
         oWebEngine := TWebEngine():New(oDlg,0,0,100,100,/*cUrl*/,oWebChannel:nPort)
         oWebEngine:Align := CONTROL_ALIGN_ALLCLIENT
-
+        
         // WebComponent de teste
         oNiverComp := NiverComp():Constructor()
         oWebEngine:navigate(;
@@ -42,10 +42,14 @@ return
 
 // Funcao customizada que sera disparada apos o termino da carga da pagina
 static function myLoadFinish(oWebEngine, url)
-    conout("myLoadFinish:")
-    conout("Class: " + GetClassName(oWebEngine))
-    conout("URL: " + url)
-    conout("TempDir: " + oNiverComp::tmp)
+    conout("-> myLoadFinish(): Termino da carga da pagina")
+    conout("-> Class: " + GetClassName(oWebEngine))
+    conout("-> URL: " + url)
+    conout("-> TempDir: " + oNiverComp::tmp)
+    conout("-> Websocket port: " + cValToChar(oWebChannel:nPort))
+
+    // Executa um runJavaScript
+    oWebEngine:runJavaScript("alert('RunJavaScript: Termino da carga da pagina');")
 return
 
 // Blocos de codigo recebidos via JavaScript
@@ -85,9 +89,8 @@ static function showNiverItens()
             // [*Material_UI Lite]
             cNiverItens +=;
             "<div class='divLine'>"+;
-                "<button onclick='twebchannel.jsToAdvpl(`<delItem>`," +cValTochar(i)+ ")'" +;
-                    "class='mdl-button mdl-js-button mdl-button--icon'>"+;
-                    "<i class='material-icons'>delete_forever</i>"  +;
+                "<button onclick='twebchannel.jsToAdvpl(`<delItem>`," +cValTochar(i)+ ")'>" +;
+                    "&#128465;"  +;
                 "</button> |"+;
                 niver + " | " + person +;
             "</div>"              
@@ -162,12 +165,6 @@ return
 // Pagina HTML inicial
 Method Template() class NiverComp
     BeginContent var cHTML
-        <head>
-            <!-- [*Material_UI Lite] -->
-            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-            <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-            <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-        </head>
         <script src="twebchannel.js"></script>
         <script>
             var niver_item
@@ -197,16 +194,11 @@ Method Template() class NiverComp
         <body>
             <!--[*Form]-->
             <form id="niverForm" onSubmit="return onClickSubmit(event, niverForm);" > 
-                <!-- [*Material_UI Lite] -->
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="person" value=" ">
-                    <label class="mdl-textfield__label" for="person">Aniversariante</label>
-                </div>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
-                      style="max-width: 200px;">
-                    <input class="mdl-textfield__input" type="date" id="niver" value="2019-01-01">
-                    <label class="mdl-textfield__label" for="niver">Niver</label>
-                </div>
+                <input type="text" id="person" value=" ">
+                <label for="person">Aniversariante</label>
+                
+                <input type="date" id="niver" value="2019-01-01">
+                <label for="niver">Niver</label>
 
                 <button class="button" id="btnSubmit">INSERIR</button> <!--[*CustomButton]-->
             </form>
